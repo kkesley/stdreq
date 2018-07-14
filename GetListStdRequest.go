@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 )
 
+//GetListStdRequest get standard list from api gateway request
 func GetListStdRequest(requestEvent events.APIGatewayProxyRequest) ListStdRequest {
 	request := ListStdRequest{}
 	if limit, ok := requestEvent.QueryStringParameters["limit"]; ok {
