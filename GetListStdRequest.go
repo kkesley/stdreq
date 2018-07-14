@@ -8,8 +8,7 @@ import (
 )
 
 //GetListStdRequest get standard list from api gateway request
-func GetListStdRequest(requestEvent events.APIGatewayProxyRequest) ListStdRequest {
-	request := ListStdRequest{}
+func GetListStdRequest(requestEvent events.APIGatewayProxyRequest, request *ListStdRequest) {
 	if limit, ok := requestEvent.QueryStringParameters["limit"]; ok {
 		limitInt, err := strconv.Atoi(limit)
 		if err == nil {
@@ -33,5 +32,4 @@ func GetListStdRequest(requestEvent events.APIGatewayProxyRequest) ListStdReques
 	if order, ok := requestEvent.QueryStringParameters["order"]; ok {
 		request.Order = aws.String(order)
 	}
-	return request
 }
