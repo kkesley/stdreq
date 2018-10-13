@@ -32,4 +32,7 @@ func GetListStdRequest(requestEvent events.APIGatewayProxyRequest, request *List
 	if order, ok := requestEvent.QueryStringParameters["order"]; ok {
 		request.Order = aws.String(order)
 	}
+	if order, ok := requestEvent.QueryStringParameters["search"]; ok {
+		request.Search = aws.String(order)
+	}
 }
