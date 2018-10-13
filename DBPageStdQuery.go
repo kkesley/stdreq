@@ -8,7 +8,7 @@ import (
 )
 
 //DBPageStdQuery standard limit / offset pagination
-func DBPageStdQuery(query *gorm.DB, request ListStdRequest, count int) *gorm.DB {
+func DBPageStdQuery(query *gorm.DB, request *ListStdRequest, count int) *gorm.DB {
 	if request.Limit == nil {
 		request.Limit = aws.Int(10)
 	}
